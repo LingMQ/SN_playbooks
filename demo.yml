@@ -4,8 +4,5 @@
   roles:
     - messagebus
 
-  gather_facts: yes
-
   tasks:    
-    - set_fact: jenkins_url= "{{ url }}"
     - command: /bin/false
