@@ -1,0 +1,6 @@
+---
+-   name: Test playbook
+    hosts: shell.lab.bos.redhat.com
+    tasks:
+      - name: Hello world
+        debug: 

@@ -29,8 +29,8 @@ import sys
 import tempfile
 import time
 
-import jenkins
-#import requests
+#import jenkins
+import requests
 
 try:
     import cStringIO as StringIO
@@ -189,13 +189,14 @@ class CallbackModule(CallbackBase):
                 status_message)).run()
         else:
             print("what??!!")
+            '''
             j = jenkins.Jenkins(self.jenkins_url_addr, self.jenkins_usrname, self.jenkins_api_token)
             j.build_job(self.jenkins_jobName, parameters=status_message)
+            '''
 
-            '''## use request instead
+            ## use request instead
             url = self.jenkins_url_addr
             resp = requests.post(url,
                                  params=status_message,
                                  auth=(self.jenkins_usrname, self.jenkins_api_token),
-                                 verify=False)'''
-            
+                                 verify=False)
