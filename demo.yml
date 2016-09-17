@@ -4,5 +4,6 @@
   roles:
     - messagebus
 
-  tasks:    
+  tasks:
+    - debug: msg="Hello World!"
     - command: /bin/false
