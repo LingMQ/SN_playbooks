@@ -155,6 +155,8 @@ class CallbackModule(CallbackBase):
         print(self.jenkins_url_addr)
         self.jenkins_usrname = variables.get('jenkins_usr')
         self.jenkins_jobName = variables.get('jenkins_job_name')
+        print("print the job name")
+        print(self.jenkins_jobName)
         self.jenkins_api_token = variables.get('jenkins_usr_api_token')
 
         
