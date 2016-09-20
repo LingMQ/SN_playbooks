@@ -199,8 +199,7 @@ class CallbackModule(CallbackBase):
             
             ## use request instead
             url = self.jenkins_url_addr
+            auth = requests.auth.HTTPBasicAuth(self.jenkins_usrname, self.jenkins_api_token)
             resp = requests.post(url, 
-                                 auth=(self.jenkins_usrname, self.jenkins_api_token),
-                                 json=status_message,
-                                 headers={"Content-Type": "application/json",},
-                                 verify=False,)
+                                 auth=auth,
+                                 params=status_message)
